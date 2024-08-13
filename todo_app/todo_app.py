@@ -12,7 +12,7 @@ def main_menu():
         except FileExistsError:
             break
     while True:
-#         try:
+        try:
             print('Please choose an item')
             print("1. Create a task")
             print("2. Update a task")
@@ -25,14 +25,14 @@ def main_menu():
             user_input=float(input('Enter the number of the task you need to implement:\t'))
             if user_input==1:
                 create_item()
-            if user_input==3:
+            elif user_input==3:
                 all_tasks=view_all_tasks()
                 
                 to_delete=float(input('Enter the number of the task you want to delete:\t'))
                 if to_delete in all_tasks.keys():
                     task_to_delete=all_tasks[to_delete]
                     delete_task(task_to_delete)
-            if user_input==4:
+            elif user_input==4:
                 view_all_tasks()
             elif user_input==8:
                 sys.exit()
@@ -40,9 +40,9 @@ def main_menu():
                 print("="*80)   
                 print('Invalid Input')
                 print("="*80)   
-#         except ValueError:
-#             print('Invalid Input')
-#             continue
+        except ValueError:
+            print('Invalid Input')
+            continue
         
 # if __name__ == '__main__':
 #     main_menu()
