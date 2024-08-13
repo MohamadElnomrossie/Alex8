@@ -42,4 +42,15 @@ def delete_task(task):
         t.write(text)
     print("Deleted")
     
-        
+
+def view_tasks(tpe):
+    all_tasks=view_all_tasks()
+    
+    def filter_tasks(pair):
+        key,value=pair
+        if tpe in value:
+            return pair
+    filtered_tasks=filter(filter_tasks,all_tasks.items())
+    
+    print(dict(filtered_tasks))
+    

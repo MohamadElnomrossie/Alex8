@@ -1,6 +1,6 @@
 import sys
 import os
-from item_operations import create_item,view_all_tasks,delete_task
+from item_operations import create_item,view_all_tasks,delete_task,view_tasks
 
 def main_menu():
     filename='data.txt'
@@ -34,6 +34,8 @@ def main_menu():
                     delete_task(task_to_delete)
             elif user_input==4:
                 view_all_tasks()
+            elif user_input==5:
+                view_tasks('open')
             elif user_input==8:
                 sys.exit()
             else:
